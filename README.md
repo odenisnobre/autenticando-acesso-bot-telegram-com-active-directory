@@ -59,12 +59,17 @@ Para adicionar à navegação do Telegram seria este:
 As configurações do LDAP é o nome/ip do servidor de domínio com sua respectivamente e a autenticação:
 <img src="https://github.com/dedynobre/autenticando-acesso-bot-telegram-com-active-directory/blob/main/imagens/acesso-03.png"/>
 
-Na configuração de busca temos o **Base DN** que temos que colocar o caminho da nossa **OU** e em filter temos o que deveremos buscar. Para a busca podemos colocar xxxxx = {{msg.payload}}, onde xxxxx = atributo usado para filtro e no nosso o filtro vai vim no payload mas pode ser qual parte da mensagem:
+Na configuração de busca temos o **Base DN** onde temos que colocar o caminho da nossa **OU** e em filter temos o que deveremos buscar. Para a busca podemos colocar xxxxx = {{msg.payload}}, onde xxxxx = atributo usado para filtro e no nosso o filtro vai vim no payload mas pode ser qual parte da mensagem:
 <img src="https://github.com/dedynobre/autenticando-acesso-bot-telegram-com-active-directory/blob/main/imagens/acesso-02.png"/>
+
+
+
+
+
 
 ## Conclusão
 
-
+Após testes este desenvolvimento se mostrou eficiente e centralizado, garantindo que todas as aprovações fiquem amarradas ao usuário de rede. Se o usuário deixar de existir no domínio, automaticamente o acesso é interrompido.
 
 
 
