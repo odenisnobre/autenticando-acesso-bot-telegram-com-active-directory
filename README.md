@@ -38,7 +38,7 @@ Quando um usuário é criado no 'AD', este possui diversos atributos de identifi
 
 Com esta informação é aí que entra a configuração do lado do usuário no seu smartphone. O Telegram disponibiliza um item de configuração que se chama 'username':
 
-<img src="https://github.com/dedynobre/autenticando-acesso-bot-telegram-com-active-directory/blob/master/imagens/acesso-01.png"/>
+<img src="https://github.com/dedynobre/autenticando-acesso-bot-telegram-com-active-directory/blob/main/imagens/acesso-01.png"/>
 
 
 
