@@ -20,7 +20,7 @@ Autenticando Acesso do Bot do Telegram com Active Directory
 Vamos pensar no seguinte cenário: um usuário pediu para ter acesso ao Bot e esta permissão após aprovações foi liberada.
 O administrador identificou o **userId** do usuário e adicionou em algum lugar onde conseguisse, a cada acesso, consultar esse **userId**.
 
-Este modelo de liberação funciona muito bem só que gera um trabalho pois o administrador sempre tem que monitorar se este usuário está ativo ou não. Caso não esteja deverá remover o 'userID' da lista de pessoas liberadas para acesso. Isso nem sempre funciona ou para funcionar tem que term uma rotina muito bem detalhada para verificar se este usuário pode ou não pode ter o acesso.
+Este modelo de liberação funciona muito bem só que gera um trabalho pois o administrador sempre tem que monitorar se este usuário está ativo ou não. Caso não esteja deverá remover o 'userID' da lista de pessoas liberadas para acesso. Isso nem sempre funciona ou para funcionar tem que ter uma rotina muito bem detalhada para verificar se este usuário pode ou não pode ter o acesso.
 
 O mais crítico é quando o usuário não faz mais parte da empresa e continua acessando as informações.
 
@@ -30,9 +30,9 @@ Então se quando o usuário entra na empresa é solicitado a criação do usuár
 
 Com todos estes detalhes então temos que podemos "travar" o aceso ao Bot desde que o mesmo continue na empresa. Como fazer isso?
 
-Para isto precisamos de três pontos de configurações, uma do lado do usuário(no smartphone), outra no lado do programador e outro do lado da TI.
+Para isto precisamos de três pontos de configurações, uma do lado do usuário (no smartphone), outra no lado do programador e outro do lado da TI.
 
-Do lado da TI é criar um grupo para gerenciar os usuários que terá acesso ao Bot. O nome é conforme padrão de cada empresa e este deverá ser passado para o progrmador.
+Do lado da TI é criar um grupo para gerenciar os usuários que terá acesso ao Bot. O nome é conforme padrão de cada empresa e este deverá ser passado para o programador.
 
 Quando um usuário é criado no AD, este possui diversos atributos de identificação, como nome, sobrenome, empresa, local de trabalho, e por ai vai. A ideia principal é procurar um atributo único que identifique o usuário. Não existe um atributo padrão, mesmo que o 'username' seja o mais comum utilizado. Mas pode ser o número do telefone, registro, etc. A TI deverá passar qual atributo o desenvolver deverá considerar para fazer os filtros.
 
@@ -41,11 +41,11 @@ Com esta informação é aí que entra a configuração do lado do usuário no s
 <img src="https://github.com/dedynobre/autenticando-acesso-bot-telegram-com-active-directory/blob/main/imagens/acesso-01.png"/>
 
 O nome de usuário deve ser algo parecido com o atributo definido pela TI e desenvolvedor.
-Visto que o nome de usuário o próprio Telegram verifica se está disponível ou não, esse atributo deve ser seguido por um códido qualquer que garante uma identificação mais claro do usuário, garantindo que isso não se duplique.
+Visto que o nome de usuário o próprio Telegram verifica se está disponível ou não, esse atributo deve ser seguido por um código qualquer que garante uma identificação mais claro do usuário, garantindo que isso não se duplique.
 
 Do lado do desenvolver o mesmo ao fazer a programação deve consultar se o usuário existe ou não naquele grupo em questão.
 
-O protocolo utilizado para se consultar objetos no AD é o **LDAP**. Com ele é possível, desde que esteja autentiticado, fazer consultas ao AD e obter detalhes de cada objeto que consta na árvore.
+O protocolo utilizado para se consultar objetos no AD é o **LDAP**. Com ele é possível, desde que esteja autenticado, fazer consultas ao AD e obter detalhes de cada objeto que consta na árvore.
 
 Como no nosso caso usamos o Node-Red o mesmo possui um node chamado LDAP, onde é possível fazer este retorno com um filtro e posteriormente fazer as lógicas de autenticação e retorno do usuário, se autenticado ou não:
 
