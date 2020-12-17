@@ -40,8 +40,20 @@ Com esta informação é aí que entra a configuração do lado do usuário no s
 
 <img src="https://github.com/dedynobre/autenticando-acesso-bot-telegram-com-active-directory/blob/main/imagens/acesso-01.png"/>
 
+O nome de usuário deve ser algo parecido com o atributo definido pela TI e desenvolvedor.
+Visto que o nome de usuário o próprio Telegram verifica se está disponível ou não, esse atributo deve ser seguido por um códido qualquer que garante uma identificação mais claro do usuário, garantindo que isso não se duplique.
 
+Do lado do desenvolver o mesmo ao fazer a programação deve consultar se o usuário existe ou não naquele grupo em questão.
 
+O protocolo utilizado para se consultar objetos no AD é o **LDAP**. Com ele é possível, desde que esteja autentiticado, fazer consultas ao AD e obter detalhes de cada objeto que consta na árvore.
+
+Como no nosso caso usamos o Node-Red o mesmo possui um node chamado LDAP, onde é possível fazer este retorno com um filtro e posteriormente fazer as lógicas de autenticação e retorno do usuário, se autenticado ou não:
+
+O fluxo simples de verificação seria este:
+<img src="https://github.com/dedynobre/autenticando-acesso-bot-telegram-com-active-directory/blob/main/imagens/acesso-04.png"/>
+
+Para adicionar à navegação do Telegram seria este:
+<img src="https://github.com/dedynobre/autenticando-acesso-bot-telegram-com-active-directory/blob/main/imagens/acesso-05.png"/>
 
 
 ## Conclusão
