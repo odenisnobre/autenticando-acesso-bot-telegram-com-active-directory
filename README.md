@@ -1,6 +1,6 @@
 <h1 align="center">
 <br>
-Autenticação do Bot do Telegram com Active Directory
+Autenticando Acesso do Bot do Telegram com Active Directory
 </h1>
 
 <p align="center"> Que o uso de Bots, sejam eles de qualquer plataforma(Telegram, Whatsap, Facebook, etc.), já é uma realidade isso é fato. Agora um item que é muito comentado e que se torna preocupante é o acesso a estes bots principalmente quando falamos de dados de operacionais de empresas, independente do qual ramo.</p>
